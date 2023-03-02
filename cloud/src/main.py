@@ -72,5 +72,8 @@ class MyStack(Stack):
                   signals=[
                       ifw.CampaignSignal('Vehicle.AmbientAirTemperature'),
                       ifw.CampaignSignal('Vehicle.DoorsState'),
+                      ifw.CampaignSignal('Vehicle.Latitude'),
+                      ifw.CampaignSignal('Vehicle.Longitude'),
+                       
                   ],
                   auto_approve=True)

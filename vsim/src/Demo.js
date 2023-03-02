@@ -9,6 +9,8 @@ import './App.css';
 
 const Demo = () => {
   const [stateDoors, setStateDoor] = useState(0);
+  const [Latitude, setGpsLatitude] = useState(0);
+  const [Longitude, setGpsLongitude] = useState(0);
   const [airTemperature, setAirTemperature] = useState(0);
   const FRONT_LEFT_DOOR = 0b00001;
   const FRONT_RIGHT_DOOR = 0b00010;
@@ -66,6 +68,35 @@ const Demo = () => {
       setAirTemperature(data.value);
     });
   }
+  const setLatitude = (value) => {
+    fetch('/api/signal/Latitude', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        value: parseFloat(value)
+      })
+    }).then(res => res.json()).then(data => {
+      setGpsLatitude(data.value);
+    });
+  }
+  const setLongitude = (value) => {
+    fetch('/api/signal/Longitude', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        value: parseFloat(value)
+      })
+    }).then(res => res.json()).then(data => {
+      setGpsLongitude(data.value);
+    });
+  }
+
 
   const getStateDoor = (door) => {
     return (stateDoors & door) ? 'Opened' : 'Closed'
@@ -83,6 +114,26 @@ const Demo = () => {
           onChange={changeEvent => setTemperature(changeEvent.target.value)}
         />
       </div>
+      <div className='top'>
+        <FormLabel>Latitude{Latitude} °</FormLabel>
+        <RangeSlider
+          value={Latitude}
+          min={-90.0}
+          max={90.0}
+          size={'lg'}
+          onChange={changeEvent => setLatitude(changeEvent.target.value)}
+        />
+      </div>
+      <div className='top'>
+        <FormLabel>Longitude {Longitude} °</FormLabel>
+        <RangeSlider
+          value={Longitude}
+          min={-180.0}
+          max={180.0}
+          size={'lg'}
+          onChange={changeEvent => setLongitude(changeEvent.target.value)}
+        />
+      </div>  
       <div className='car-container'>
         <div className='demo-left'>
           <div className='button-container'>
