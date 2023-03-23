@@ -10,12 +10,12 @@ The demo will walk you through the exercise of running on [EWAOL](https://github
 
 Deploy Cloud 9 in one of the supported regions
 
-[![Launch](https://samdengler.github.io/cloudformation-launch-stack-button-svg/images/us-east-1.svg)](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?stackName=demo-soafee-aws-iotfleetwise-cloud9&templateURL=https://demo-soafee-aws-iot-fleetwise-eu-central-1.s3.eu-central-1.amazonaws.com/cloud9-env.template.json)
+[![Launch](https://samdengler.github.io/cloudformation-launch-stack-button-svg/images/us-east-1.svg)](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/)
 
-[![Launch](https://samdengler.github.io/cloudformation-launch-stack-button-svg/images/eu-central-1.svg)](https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/create/review?stackName=demo-soafee-aws-iotfleetwise-cloud9&templateURL=https://demo-soafee-aws-iot-fleetwise-eu-central-1.s3.eu-central-1.amazonaws.com/cloud9-env.template.json)
+[![Launch](https://samdengler.github.io/cloudformation-launch-stack-button-svg/images/eu-central-1.svg)](https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/create/)
 
 Acknowledge the creation of the stack and press the button **Create stack** on the bottom right. 
-
+Upload the template file from ![cloud formation template](https://github.com/outsider7/demo-soafee-aws-iotfleetwise/blob/main/cfn/cloud9-env.template.json)
 ![Create Stack](docs/createstack.png)
 
 The ```demo-soafee-aws-iotfleetwise-cloud9``` CloudFormation stack will take about **3 minutes** to be created.
